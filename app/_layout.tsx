@@ -15,7 +15,7 @@ const RootLayout = () => {
   return (
   <AuthProvider>  <SafeAreaView
       style={{ flex: 1, width: "100%" }}
-      className="bg-[#6488acff] justify-center items-center"
+      className="bg-[#e51aa1] justify-center items-center"
     >
       <Slot />
 
