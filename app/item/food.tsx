@@ -225,6 +225,116 @@ const Food = () => {
         ],
         forbidden: ['Low-quality foods', 'Excessive phosphorus', 'Dehydrating foods', 'Hard kibble only']
       }
+    },
+    rabbit: {
+      puppy: {
+        title: 'Young Rabbit Nutrition (0-6 months)',
+        dailyMeals: 'Unlimited pellets + hay',
+        waterIntake: '1-2 ounces per pound body weight',
+        items: [
+          {
+            foodType: 'Timothy Hay (Unlimited)',
+            description: 'Essential for dental health and digestion. Fresh daily.',
+            amount: 'Body-size portion daily',
+            timing: 'Always available',
+            safety: 'safe'
+          },
+          {
+            foodType: 'High-Quality Pellets',
+            description: '18-20% protein, 14-18% fiber. Timothy hay-based.',
+            amount: '1/4 to 1/2 cup per pound',
+            timing: 'Morning and evening',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Alfalfa Hay',
+            description: 'High in calcium for growing rabbits.',
+            amount: 'Small portions with timothy',
+            timing: 'With main hay',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Fresh Vegetables',
+            description: 'Introduce gradually after 3 months old.',
+            amount: 'Start with 1 tsp, increase slowly',
+            timing: 'After hay and pellets',
+            safety: 'moderate'
+          }
+        ],
+        forbidden: ['Iceberg lettuce', 'Beans', 'Seeds', 'Nuts', 'Chocolate', 'Onions', 'Garlic', 'Avocado']
+      },
+      adult: {
+        title: 'Adult Rabbit Nutrition (6 months - 5 years)',
+        dailyMeals: '2 meals + unlimited hay',
+        waterIntake: '2-4 ounces per pound body weight',
+        items: [
+          {
+            foodType: 'Timothy Hay (Unlimited)',
+            description: 'Primary food source. Critical for dental wear and gut health.',
+            amount: 'Body-size portion daily',
+            timing: 'Always available',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Adult Pellets',
+            description: '12-16% protein, 18-25% fiber. Timothy hay-based only.',
+            amount: '1/4 cup per 5 pounds body weight',
+            timing: 'Morning and evening portions',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Leafy Greens',
+            description: 'Dark leafy greens: kale, romaine, parsley, cilantro.',
+            amount: '2-4 cups per 6 pounds daily',
+            timing: 'Fresh daily, variety important',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Fruit Treats',
+            description: 'Apple, banana, berries. High sugar content.',
+            amount: '1-2 tablespoons max daily',
+            timing: 'Occasional treats only',
+            safety: 'moderate'
+          }
+        ],
+        forbidden: ['Alfalfa pellets', 'Seeds', 'Nuts', 'Beans', 'Potatoes', 'Rhubarb', 'Chocolate', 'Dairy']
+      },
+      senior: {
+        title: 'Senior Rabbit Nutrition (5+ years)',
+        dailyMeals: '2-3 smaller meals + unlimited hay',
+        waterIntake: 'Monitor closely, may need more',
+        items: [
+          {
+            foodType: 'High-Quality Timothy Hay',
+            description: 'May need softer second-cut hay for easier chewing.',
+            amount: 'Unlimited, monitor consumption',
+            timing: 'Always available',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Senior Rabbit Pellets',
+            description: 'Higher protein (14-18%) if weight loss occurs.',
+            amount: '1/4 to 1/2 cup per 5 pounds',
+            timing: 'Adjusted based on body condition',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Extra Vegetables',
+            description: 'Increase variety and amount if losing weight.',
+            amount: '3-5 cups per 6 pounds daily',
+            timing: 'Multiple small servings',
+            safety: 'safe'
+          },
+          {
+            foodType: 'Critical Care Food',
+            description: 'Syringe-feeding formula for appetite loss.',
+            amount: 'As directed by exotic vet',
+            timing: 'When not eating normally',
+            safety: 'moderate'
+          }
+        ],
+        forbidden: ['Hard pellets', 'Sugary treats', 'Low-quality hay', 'Sudden diet changes']
+      }
     }
   }
 
@@ -270,6 +380,14 @@ const Food = () => {
         >
           <Text style={[styles.animalButtonText, selectedAnimal === 'cat' && styles.selectedAnimalText]}>
             🐱 Cats
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={[styles.animalButton, selectedAnimal === 'rabbit' && styles.selectedAnimal]}
+          onPress={() => setSelectedAnimal('rabbit')}
+        >
+          <Text style={[styles.animalButtonText, selectedAnimal === 'rabbit' && styles.selectedAnimalText]}>
+            🐰 Rabbits
           </Text>
         </TouchableOpacity>
       </View>
@@ -368,6 +486,16 @@ const Food = () => {
         <View style={styles.tipItem}>
           <Text style={styles.tipText}>• Consult your vet before making major dietary changes</Text>
         </View>
+        {selectedAnimal === 'rabbit' && (
+          <>
+            <View style={styles.tipItem}>
+              <Text style={styles.tipText}>• Rabbits practice cecotrophy (eating soft feces) - this is normal</Text>
+            </View>
+            <View style={styles.tipItem}>
+              <Text style={styles.tipText}>• Introduce new vegetables one at a time to check for allergies</Text>
+            </View>
+          </>
+        )}
       </View>
     </ScrollView>
   )

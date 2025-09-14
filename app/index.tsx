@@ -2,6 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView, Dimensions } from 
 import { Link } from 'expo-router'
 import React from 'react'
 
+
 const { width, height } = Dimensions.get('window');
 
 const Index = () => {
@@ -87,70 +88,89 @@ const Index = () => {
 
         {/* Navigation Menu - Enhanced */}
         <View className="px-4 mb-6">
-          <Text className="text-2xl font-bold text-gray-800 mb-4">Menu</Text>
-          <View className="space-y-4">
-            
-            {/* Profile Link - Enhanced */}
-            <Link href="/profile" asChild>
-              <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
-                <View className="flex-row items-center justify-between">
-                  <View className="flex-row items-center flex-1">
-                    <View className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-2xl items-center justify-center mr-4">
-                      <Text className="text-white text-2xl">👤</Text>
-                    </View>
-                    <View className="flex-1">
-                      <Text className="text-gray-800 font-bold text-xl">Profile Settings</Text>
-                      <Text className="text-gray-500 text-lg mt-1">Manage your account and preferences</Text>
-                    </View>
-                  </View>
-                  <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
-                    <Text className="text-pink-500 text-xl">›</Text>
-                  </View>
+      <Text className="text-2xl font-bold text-gray-800 mb-4">Menu</Text>
+      <View className="space-y-4">
+        {/* Medical Health Link */}
+        <Link href="/medical" asChild>
+          <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center flex-1">
+                <View className="w-16 h-16 bg-gradient-to-br from-blue-400 to-pink-500 rounded-2xl items-center justify-center mr-4">
+                  <Text className="text-white text-2xl">🩺</Text>
                 </View>
-              </TouchableOpacity>
-            </Link>
-
-            {/* User Link - Enhanced */}
-            <Link href="/user" asChild>
-              <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
-                <View className="flex-row items-center justify-between">
-                  <View className="flex-row items-center flex-1">
-                    <View className="w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl items-center justify-center mr-4">
-                      <Text className="text-white text-2xl">👥</Text>
-                    </View>
-                    <View className="flex-1">
-                      <Text className="text-gray-800 font-bold text-xl">User Management</Text>
-                      <Text className="text-gray-500 text-lg mt-1">Manage users, roles and permissions</Text>
-                    </View>
-                  </View>
-                  <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
-                    <Text className="text-pink-500 text-xl">›</Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
-            </Link>
-
-            {/* Additional Menu Items */}
-            <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
-              <View className="flex-row items-center justify-between">
-                <View className="flex-row items-center flex-1">
-                  <View className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl items-center justify-center mr-4">
-                    <Text className="text-white text-2xl">📱</Text>
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-gray-800 font-bold text-xl">Pet Tracker</Text>
-                    <Text className="text-gray-500 text-lg mt-1">GPS tracking and safety alerts</Text>
-                  </View>
-                </View>
-                <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
-                  <Text className="text-pink-500 text-xl">›</Text>
+                <View className="flex-1">
+                  <Text className="text-gray-800 font-bold text-xl">Medical Health</Text>
+                  <Text className="text-gray-500 text-lg mt-1">Track vaccinations and vet visits</Text>
                 </View>
               </View>
-            </TouchableOpacity>
+              <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
+                <Text className="text-pink-500 text-xl">›</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </Link>
 
-          </View>
-        </View>
+        {/* Food Link */}
+        <Link href="/food" asChild>
+          <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center flex-1">
+                <View className="w-16 h-16 bg-gradient-to-br from-green-400 to-pink-500 rounded-2xl items-center justify-center mr-4">
+                  <Text className="text-white text-2xl">🍽️</Text>
+                </View>
+                <View className="flex-1">
+                  <Text className="text-gray-800 font-bold text-xl">Food & Nutrition</Text>
+                  <Text className="text-gray-500 text-lg mt-1">Manage diet and feeding schedules</Text>
+                </View>
+              </View>
+              <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
+                <Text className="text-pink-500 text-xl">›</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </Link>
 
+        {/* Bathing Link */}
+        <Link href="/bathing" asChild>
+          <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center flex-1">
+                <View className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl items-center justify-center mr-4">
+                  <Text className="text-white text-2xl">🛁</Text>
+                </View>
+                <View className="flex-1">
+                  <Text className="text-gray-800 font-bold text-xl">Bathing & Grooming</Text>
+                  <Text className="text-gray-500 text-lg mt-1">Schedule baths and grooming</Text>
+                </View>
+              </View>
+              <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
+                <Text className="text-pink-500 text-xl">›</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </Link>
+
+        {/* Pet Tracker - Retained */}
+        <Link href="/pet-tracker" asChild>
+          <TouchableOpacity className="bg-white rounded-3xl p-6 shadow-lg border border-pink-100/50">
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center flex-1">
+                <View className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl items-center justify-center mr-4">
+                  <Text className="text-white text-2xl">📱</Text>
+                </View>
+                <View className="flex-1">
+                  <Text className="text-gray-800 font-bold text-xl">Pet Tracker</Text>
+                  <Text className="text-gray-500 text-lg mt-1">GPS tracking and safety alerts</Text>
+                </View>
+              </View>
+              <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center">
+                <Text className="text-pink-500 text-xl">›</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </Link>
+      </View>
+    </View>
         {/* Recent Activities - Full Width */}
         <View className="px-4 mb-6">
           <Text className="text-2xl font-bold text-gray-800 mb-4">Recent Activities</Text>
